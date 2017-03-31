@@ -1,10 +1,13 @@
+/*
+*please not that this code works for all the sample files given by kattis but failed on the fifth problem given
+*
+*/
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Stack;
 import java.util.TreeSet;
 
 public class Zagrade {
-	static int num;
 	static ArrayList<Integer> left;
 	static ArrayList<Integer> right;
 	static TreeSet<String> set;
@@ -24,7 +27,7 @@ public class Zagrade {
 				right.add(i);
 			}
 		}
-		num = (int) (Math.pow(2,left.size()))-1;
+	
 		boolean[] check = new boolean[left.size()];
 		recurse(exp,check);
 		for (String s: set){
@@ -33,8 +36,6 @@ public class Zagrade {
 	
 	}
 	private static void recurse(char[] word,boolean[] test){
-		if (num<1)return;
-		num-=1;
 		for (int i =0;i<test.length;i++){
 			if (!test[i]){
 				boolean[] nuf = test.clone();
